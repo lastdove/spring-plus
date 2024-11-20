@@ -73,14 +73,12 @@ public class TodoService {
     Todo todo = todoRepository.findByIdWithUser(todoId)
         .orElseThrow(() -> new InvalidRequestException("Todo not found"));
 
-    User user = todo.getUser();
-
     return new TodoResponse(
         todo.getId(),
         todo.getTitle(),
         todo.getContents(),
         todo.getWeather(),
-        new UserResponse(user.getId(), user.getEmail()),
+        new UserResponse(todo.getUser().getId(), todo.getUser().getEmail()), // User 정보 가져오기
         todo.getCreatedAt(),
         todo.getModifiedAt()
     );

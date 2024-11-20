@@ -1,4 +1,4 @@
-@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJVU0VSIiwiZXhwIjoxNzMyMTMwNzczLCJpYXQiOjE3MzIxMjcxNzN9.ZS5-uvXnEN_QykxP3RBLcQ-rEeGEl8tk5OIX6oCfP4k
+@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJVU0VSIiwiZXhwIjoxNzMyMTQyNzQ4LCJpYXQiOjE3MzIxMzkxNDh9.J-facISFx-398_CaJlICOh9dwIz6DwRwZ_vZMFzZGlw
 
 ### 회원가입
 POST http://localhost:8080/auth/signup
@@ -64,5 +64,10 @@ Content-Type: application/json
 
 ### 댓글조회(사용자 정보 포함)
 GET http://localhost:8080/todos/4/comments
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+### 할일 조회 (단일)
+GET http://localhost:8080/todos/1
 Authorization: Bearer {{Authorization}}
 Content-Type: application/json
