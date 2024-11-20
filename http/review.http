@@ -1,4 +1,4 @@
-@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJVU0VSIiwiZXhwIjoxNzMyMDg3Mzk3LCJpYXQiOjE3MzIwODM3OTd9.0v6ldA5b6Dyst475IQAEXnMyYd3qnHhhSC8L7fFfpRg
+@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJBRE1JTiIsImV4cCI6MTczMjA4ODg5MiwiaWF0IjoxNzMyMDg1MjkyfQ.BG2GBgHdR_Rl5se6UxcEZxgcG7ZCx1hhGQDUKf8-ILc
 
 ### 회원가입
 POST http://localhost:8080/auth/signup
@@ -33,3 +33,12 @@ Content-Type: application/json
 GET http://localhost:8080/users/profile
 Authorization: Bearer {{Authorization}}
 Content-Type: application/json
+
+### 권한 변경
+PATCH http://localhost:8080/admin/users/1
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+{
+  "role": "USER"
+}
