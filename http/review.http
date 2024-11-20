@@ -1,4 +1,4 @@
-@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJ1c2VyUm9sZSI6IlVTRVIiLCJleHAiOjE3MzIwNjY1NDksImlhdCI6MTczMjA2Mjk0OX0.zTfWpqAV2hNn7sy08pP2i-xEdQeRKSKMUI4XWu8zAHQ
+@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJVU0VSIiwiZXhwIjoxNzMyMDg3Mzk3LCJpYXQiOjE3MzIwODM3OTd9.0v6ldA5b6Dyst475IQAEXnMyYd3qnHhhSC8L7fFfpRg
 
 ### 회원가입
 POST http://localhost:8080/auth/signup
@@ -28,3 +28,8 @@ Content-Type: application/json
   "title": "test",
   "contents": "test"
 }
+
+### 토큰에 있는 닉네임 불러오기
+GET http://localhost:8080/users/profile
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
