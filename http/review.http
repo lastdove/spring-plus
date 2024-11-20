@@ -1,18 +1,19 @@
-@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJVU0VSIiwiZXhwIjoxNzMyMTQyNzQ4LCJpYXQiOjE3MzIxMzkxNDh9.J-facISFx-398_CaJlICOh9dwIz6DwRwZ_vZMFzZGlw
+@token=uLkEKOuYPTTEAwlFXhycnDThvbWAayFWNoZ8PmbhW1JaPBBLgIs0GYioDVHpMjAhOjGorQGCkNTkXBZ7AbMeW1KDaGJsDiF4
 
 ### 회원가입
 POST http://localhost:8080/auth/signup
 Content-Type: application/json
 
 {
-  "email": "wlsdh@gmail.com",
+  "email": "wlsdh2@gmail.com",
   "password": "wlsdh741@",
-  "userRole": "USER"
+  "userRole": "ADMIN"
 }
 
 ### 로그인
 POST http://localhost:8080/auth/signin
 Content-Type: application/json
+X-CSRF-TOKEN: {{token}}
 
 {
   "email": "wlsdh@gmail.com",
@@ -69,5 +70,10 @@ Content-Type: application/json
 
 ### 할일 조회 (단일)
 GET http://localhost:8080/todos/1
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+### CSRF토큰 발급
+GET http://localhost:8080/csrf-token
 Authorization: Bearer {{Authorization}}
 Content-Type: application/json
