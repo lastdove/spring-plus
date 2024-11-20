@@ -1,0 +1,30 @@
+@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJ1c2VyUm9sZSI6IlVTRVIiLCJleHAiOjE3MzIwNjY1NDksImlhdCI6MTczMjA2Mjk0OX0.zTfWpqAV2hNn7sy08pP2i-xEdQeRKSKMUI4XWu8zAHQ
+
+### 회원가입
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+  "email": "wlsdh@gmail.com",
+  "password": "wlsdh741@",
+  "userRole": "USER"
+}
+
+### 로그인
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "email": "wlsdh@gmail.com",
+  "password": "wlsdh741@"
+}
+
+### 할일 저장
+POST http://localhost:8080/todos?page={{$random.integer(100)}}&size={{$random.integer(100)}}
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+{
+  "title": "test",
+  "contents": "test"
+}
