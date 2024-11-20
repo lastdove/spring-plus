@@ -1,4 +1,4 @@
-@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJBRE1JTiIsImV4cCI6MTczMjA4ODg5MiwiaWF0IjoxNzMyMDg1MjkyfQ.BG2GBgHdR_Rl5se6UxcEZxgcG7ZCx1hhGQDUKf8-ILc
+@Authorization=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ3bHNkaEBnbWFpbC5jb20iLCJuaWNrbmFtZSI6Ik9yZGVyIiwidXNlclJvbGUiOiJVU0VSIiwiZXhwIjoxNzMyMTMwNzczLCJpYXQiOjE3MzIxMjcxNzN9.ZS5-uvXnEN_QykxP3RBLcQ-rEeGEl8tk5OIX6oCfP4k
 
 ### 회원가입
 POST http://localhost:8080/auth/signup
@@ -25,8 +25,8 @@ Authorization: Bearer {{Authorization}}
 Content-Type: application/json
 
 {
-  "title": "test",
-  "contents": "test"
+  "title": "test4",
+  "contents": "test4"
 }
 
 ### 토큰에 있는 닉네임 불러오기
@@ -42,3 +42,27 @@ Content-Type: application/json
 {
   "role": "USER"
 }
+
+### 할일 조회(날씨)
+GET http://localhost:8080/todos?weather=Snowy and Cool&page=1&size=10
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+### 할일 조회(수정일자)
+GET http://localhost:8080/todos?startDate=2024-11-20T00:00:00&endDate=2024-11-21T23:59:59&page=1&size=10
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+### 할일에 대한 댓글등록
+POST http://localhost:8080/todos/4/comments
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
+
+{
+  "contents": "댓글1"
+}
+
+### 댓글조회(사용자 정보 포함)
+GET http://localhost:8080/todos/4/comments
+Authorization: Bearer {{Authorization}}
+Content-Type: application/json
